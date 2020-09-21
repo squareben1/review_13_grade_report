@@ -7,3 +7,7 @@ def test_returns_single_green():
 
 def test_returns_two_greens():
     assert grade_checker("75, 76") == "Green: 2"
+
+
+def test_returns_single_amber():
+    assert grade_checker("50") == "Amber: 1"
