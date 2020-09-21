@@ -12,9 +12,12 @@ Chose to use Chicago-style TDD rather than London (building out each piece of fu
 
 Stuck fairly well to good TDD process. Definitely did the fastest thing to make a test pass, rather than try to get the most optinal/graceful approach straight away. This allowed for some satisfying refactors.
 
-Pleased with how I spoke through my process aloud. Further evidence for helpful this is:
-## 🦆
+Extracted count_colour() functions for each colour for sake of SRP.
 
+## 🦆
+Pleased with how I spoke through my process aloud. Further evidence for helpful this is. 
+
+Probably my last review for a while! 😢
 
 Katherine had minor but useful feedback:
 1. Function Naming: Use VERBS! Original function was named ```grade_checker(string)``` which sounds like an object/class rather than a function. Changed to ```check_grades()```
@@ -39,11 +42,12 @@ Red = < 50
 
 Always seperated by comma and space OR just comma
 
-In	 	|		Out
-“75”		> “Green: 1”
+    In	    |	  Out
+-------------------------
+“75”		| “Green: 1”
 “75, 76”	| “Green: 2”
 “50”		| “Amber: 1”
 “50, 51”	| “Amber: 2”
 “49”		| “Red: 1”
-"10, 50, 70, 100" > "Green: 1\nAmber: 2\nRed: 1"
+"10, 50, 70, 100" | "Green: 1\nAmber: 2\nRed: 1"
 ```

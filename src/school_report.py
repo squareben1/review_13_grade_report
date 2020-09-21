@@ -1,27 +1,31 @@
 
-# give it a verb name, #grade_checker sounds like an object i.e. class
-
-
 def check_grades(string):
     words = string.split(", ")
     grades = [int(word) for word in words]
-    return_string = []
+    return_strings_arr = []
 
-    green_count = sum(i >= 75 for i in grades)
-    amber_count = sum(i >= 50 and i < 75 for i in grades)
-    red_count = sum(i < 50 for i in grades)
+    green_count = count_greens(grades)
+    amber_count = count_ambers(grades)
+    red_count = count_reds(grades)
 
     if green_count > 0:
-        return_string.append(f"Green: {green_count}")
+        return_strings_arr.append(f"Green: {green_count}")
     if amber_count > 0:
-        return_string.append(f"Amber: {amber_count}")
+        return_strings_arr.append(f"Amber: {amber_count}")
     if red_count > 0:
-        return_string.append(f"Red: {red_count}")
+        return_strings_arr.append(f"Red: {red_count}")
 
     seprator = "\n"
-    return seprator.join(return_string)
+    return seprator.join(return_strings_arr)
 
-# commit messages:
-# More descriptive, "Can count single red grades" rather than "single red"
-# Lists vs. Arrays
-# list - dynamic, arrays = fixed "creating an array of length 5 of int type" -
+
+def count_greens(arr):
+    return sum(i >= 75 for i in arr)
+
+
+def count_ambers(arr):
+    return sum(i in range(50, 75) for i in arr)
+
+
+def count_reds(arr):
+    return sum(i < 50 for i in arr)
