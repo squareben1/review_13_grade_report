@@ -1,5 +1,8 @@
 
-def grade_checker(string):
+# give it a verb name, #grade_checker sounds like an object i.e. class
+
+
+def check_grades(string):
     words = string.split(", ")
     grades = [int(word) for word in words]
     return_string = []
@@ -17,3 +20,8 @@ def grade_checker(string):
 
     seprator = "\n"
     return seprator.join(return_string)
+
+# commit messages:
+# More descriptive, "Can count single red grades" rather than "single red"
+# Lists vs. Arrays
+# list - dynamic, arrays = fixed "creating an array of length 5 of int type" -
