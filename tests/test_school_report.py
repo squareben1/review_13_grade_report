@@ -11,3 +11,7 @@ def test_returns_two_greens():
 
 def test_returns_single_amber():
     assert grade_checker("50") == "Amber: 1"
+
+
+def test_returns_two_ambers():
+    assert grade_checker("50, 51") == "Amber: 2"

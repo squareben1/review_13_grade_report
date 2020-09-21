@@ -3,11 +3,16 @@ def grade_checker(string):
     words = string.split(", ")
     grades = [int(word) for word in words]
 
-    green_count = len(words)
+    green_count = 0
     amber_count = 0
 
-    if grades[0] < 75:
-        amber_count += 1
-        return f"Amber: {amber_count}"
+    for i in grades:
+        if i < 75:
+            amber_count += 1
+        elif i >= 75:
+            green_count += 1
 
-    return f"Green: {green_count}"
+    if green_count > 0:
+        return f"Green: {green_count}"
+    else:
+        return f"Amber: {amber_count}"
