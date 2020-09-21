@@ -4,17 +4,9 @@ def grade_checker(string):
     grades = [int(word) for word in words]
     return_string = []
 
-    green_count = 0
-    amber_count = 0
-    red_count = 0
-
-    for i in grades:
-        if i < 75 and i >= 50:
-            amber_count += 1
-        elif i >= 75:
-            green_count += 1
-        elif i < 50:
-            red_count += 1
+    green_count = sum(i >= 75 for i in grades)
+    amber_count = sum(i >= 50 and i < 75 for i in grades)
+    red_count = sum(i < 50 for i in grades)
 
     if green_count > 0:
         return_string.append(f"Green: {green_count}")
@@ -24,5 +16,4 @@ def grade_checker(string):
         return_string.append(f"Red: {red_count}")
 
     seprator = "\n"
-    print(return_string)
     return seprator.join(return_string)
