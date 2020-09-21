@@ -1,3 +1,4 @@
 
 def grade_checker(string):
-    return "Green: 1"
+    words = string.split(", ")
+    return f"Green: {len(words)}"
