@@ -19,3 +19,11 @@ def test_returns_two_ambers():
 
 def test_returns_single_red():
     assert grade_checker("49") == "Red: 1"
+
+
+def test_returns_two_red():
+    assert grade_checker("49, 49") == "Red: 2"
+
+
+def test_returns_diff_grades():
+    assert grade_checker("10, 50, 70, 100") == "Green: 1\nAmber: 2\nRed: 1"
