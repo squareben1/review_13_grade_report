@@ -1,7 +1,6 @@
 
 def check_grades(string):
-    words = string.split(", ")
-    grades = [int(word) for word in words]
+    grades = intify_grades(string)
     return_strings_arr = []
 
     green_count = count_greens(grades)
@@ -17,6 +16,11 @@ def check_grades(string):
 
     seprator = "\n"
     return seprator.join(return_strings_arr)
+
+
+def intify_grades(string):
+    words = string.split(", ")
+    return [int(word) for word in words]
 
 
 def count_greens(arr):
