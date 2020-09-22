@@ -1,21 +1,21 @@
 
 def check_grades(string):
     grades = intify_grades(string)
-    returned_grade_ints_arr = []
+    grades_count_strings_array = []
 
     green_count = count_greens(grades)
     amber_count = count_ambers(grades)
     red_count = count_reds(grades)
 
     if green_count > 0:
-        returned_grade_ints_arr.append(f"Green: {green_count}")
+        grades_count_strings_array.append(f"Green: {green_count}")
     if amber_count > 0:
-        returned_grade_ints_arr.append(f"Amber: {amber_count}")
+        grades_count_strings_array.append(f"Amber: {amber_count}")
     if red_count > 0:
-        returned_grade_ints_arr.append(f"Red: {red_count}")
+        grades_count_strings_array.append(f"Red: {red_count}")
 
     seprator = "\n"
-    return seprator.join(returned_grade_ints_arr)
+    return seprator.join(grades_count_strings_array)
 
 
 def intify_grades(string):
